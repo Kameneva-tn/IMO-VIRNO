@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЇМО ВІРНО — сири, йогурти та молочне з доставкою</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;600;800&family=Onest:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=11">
+  <link rel="icon" href="assets/favicon.svg">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="#top" aria-label="ЇМО ВІРНО, на головну">ЇМО&nbsp;ВІРНО<b></b></a>
+      <button class="where" id="whereBtn" type="button" aria-expanded="false" aria-controls="wherePop"><small>Доставка</small><span id="whereTxt">Київ, оберіть адресу</span></button>
+      <label class="search"><span class="sr">Пошук товарів</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Бриндзя, буррата, йогурт…" autocomplete="off">
+      </label>
+      <button class="themebtn" id="setBtn" type="button" aria-label="Налаштування" aria-expanded="false" aria-controls="setPop">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      </button>
+      <button class="cartbtn" id="cartBtn" type="button" aria-label="Кошик">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="n" id="cartN">0</span><span class="sum" id="cartSum">0 грн</span>
+      </button>
+    </div>
+    <form class="wherepop" id="wherePop" hidden><label for="whereIn">Куди доставити?</label><div><input id="whereIn" placeholder="Київ, вул. Хрещатик, 1" autocomplete="street-address"><button class="btn" type="submit">Зберегти</button></div></form>
+    <div class="setpop" id="setPop" hidden>
+      <b>Налаштування</b>
+      <label class="sw"><span>Темна тема</span><input type="checkbox" id="darkSw" role="switch"><i aria-hidden="true"></i></label>
+    </div>
+    <nav class="cats" id="cats" aria-label="Групи товарів"></nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="dots" aria-hidden="true"><i style="left:6%;top:14%"></i><i style="left:52%;top:6%"></i><i style="left:92%;top:10%"></i><i style="left:3%;top:74%"></i><i style="left:44%;top:96%"></i><i style="left:80%;top:94%"></i></div>
+    <div class="wrap">
+      <h1 id="heroTitle">Хіти тижня</h1>
+      <div class="stage">
+        <div class="photo"><img src="assets/img/p8.webp" alt="Гуцульська овеча бриндзя в скляній банці"></div>
+        <div class="panel">
+          <div class="feat" id="feat"></div>
+          <div class="pair">
+            <h3>Доповніть замовлення<br>тим, що смакує поруч:</h3>
+            <div id="pairs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sections" id="sections" aria-labelledby="secTitle">
+    <div class="dots" aria-hidden="true"><i style="left:4%;top:8%"></i><i style="left:96%;top:22%"></i><i style="left:50%;top:97%"></i></div>
+    <div class="wrap">
+      <h2 id="secTitle">Оберіть розділ</h2>
+      <div class="sgrid" id="sgrid"></div>
+    </div>
+  </section>
+
+  <section class="shop" id="shop" aria-labelledby="shopTitle">
+    <div class="dots" aria-hidden="true"><i style="left:2%;top:12%"></i><i style="left:97%;top:30%"></i><i style="left:48%;top:3%"></i><i style="left:1%;top:62%"></i><i style="left:98%;top:78%"></i></div>
+    <div class="wrap">
+      <div class="tool">
+        <div><h2 id="shopTitle">Каталог</h2><div class="meta" id="meta"></div></div>
+        <div class="tool-right">
+          <button class="filterbtn" id="filterBtn" type="button" aria-expanded="false" aria-controls="side">
+            Фільтри<span class="n" id="filterN" hidden>0</span>
+          </button>
+          <label class="sort">Сортувати
+            <select id="sort">
+              <option value="pop">Спочатку популярні</option>
+              <option value="asc">Спочатку дешевші</option>
+              <option value="desc">Спочатку дорожчі</option>
+              <option value="az">Від А до Я</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="layout">
+        <aside class="side" id="side" aria-label="Фільтри">
+          <div class="side-head">
+            <b>Фільтри</b>
+            <button class="iconbtn" id="sideClose" type="button" aria-label="Закрити фільтри">✕</button>
+          </div>
+          <section class="fblock">
+            <h3>Категорії</h3>
+            <div id="catList"></div>
+          </section>
+          <section class="fblock">
+            <h3>Позначки</h3>
+            <div id="tagList"></div>
+          </section>
+          <section class="fblock">
+            <h3>Бренди</h3>
+            <input type="search" id="brandQ" placeholder="Знайти бренд" autocomplete="off">
+            <div id="brandList" class="scroll"></div>
+          </section>
+          <button class="ghostbtn" id="resetF" type="button" hidden>Скинути фільтри</button>
+        </aside>
+
+        <div class="grid" id="grid" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo">
+    <div class="dots" aria-hidden="true"><i style="left:12%;top:20%"></i><i style="left:86%;top:50%"></i></div>
+    <div class="wrap"><p>Потрібна перерва?<br>Безкоштовна доставка від 999 грн</p></div>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap"><span>ЇМО ВІРНО · демо-магазин, замовлення не відправляються</span><span>Щодня 8:00–22:00 · 0 800 000 000</span></div></footer>
+
+<!-- product sheet -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="pName">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<!-- cart drawer -->
+<div class="dimmer" id="dimmer"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <div class="dh"><h2 id="dTitle">Кошик</h2><button class="iconbtn" id="dClose" type="button" aria-label="Закрити кошик">✕</button></div>
+  <div class="db" id="dBody"></div>
+  <div class="df" id="dFoot"></div>
+</aside>
+
+<div class="chartwrap" id="chartWrap" role="dialog" aria-modal="true" aria-label="Таблиця розмірів"><div class="chartbox" id="chartBox"></div></div>
+
+<button class="totop" id="toTop" type="button" aria-label="Нагору сторінки">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="assets/app.js?v=13" defer></script>
+<script src="assets/assistant.js?v=3" defer></script>
+</body>
+</html>
